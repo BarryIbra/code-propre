@@ -3,7 +3,7 @@ package ex5;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Caisse {
+public abstract class Caisse {
 
 	private String nom;
 	private List<Item> items;
@@ -15,7 +15,14 @@ public class Caisse {
 		super();
 		this.nom = nom;
 		this.items = new ArrayList<>();
+
 	}
+
+	/**
+	 * Ajoute un item à la liste des items
+	 * @param item
+	 */
+	public abstract void addItem(Item item) ;
 
 	/** Getter pour l'attribut nom
 	 * @return the nom
@@ -43,6 +50,13 @@ public class Caisse {
 	 */
 	public void setItems(List<Item> items) {
 		this.items = items;
+	}
+	/**
+	 * Retourne la taille de la liste des items(taille de la caisse)
+	 * @return
+	 */
+	public int taille() {
+		return items.size();
 	}
 	
 }
